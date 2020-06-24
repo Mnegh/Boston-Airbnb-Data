@@ -65,7 +65,7 @@
   We will construct a linear model with L1 regularization to pick out which features are the most important attributes that varies the price of a listing. The regularization technique
   is used as a feature selector, and will provide coefficients depending on how it affects a price.
   
-  But first, we must user one-hot encoding for columns that are multi-categorical like neighborhood and property type and merge it with our features.
+  But first, we must user one-hot encoding for columns that are multi-categorical like neighborhood and property type and merge it with our feature, since the model can not handle multi-categorical data. We also fill out missing data with the mean of the feature.
    ```Python
   # dummy variable of each category
   neighbour = pd.get_dummies(boston['neighbourhood'])
